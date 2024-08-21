@@ -1,6 +1,13 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
-.column{
+.columns{
+    display: flex;
     background-color: aqua;
     height: 500px;
-    
+    justify-content: space-between;
+    width: 100%;
 }
+
+.column{
+    width: 100px;
+}
+

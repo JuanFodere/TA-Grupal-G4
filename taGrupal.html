@@ -3,17 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Task Board</title>
     <link rel="stylesheet" href="style.css" defer>
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="columns">
-        <div class="column">Backlog</div>
-        <div class="column">To do</div>
-        <div class="column">In progress</div>
-        <div class="column">Blocked</div>
-        <div class="column">Done</div>
-      </div>
+    <!-- Botón de Backlog en la parte superior derecha -->
+    <div class="header">
+        <button class="backlog-btn" onclick="openBacklogModal()">Agregar</button>
+    </div>
+
+    <!-- Filas con las otras columnas -->
+    <div class="row">
+        <div class="column" data-status="backlog">
+            <h2>Backlog</h2>
+            <div class="task-container"></div>
+        </div>
+        
+        <div class="column" data-status="todo">
+            <h2>To do</h2>
+            <div class="task-container"></div>
+        </div>
+
+        <div class="column" data-status="inprogress">
+            <h2>In Progress</h2>
+            <div class="task-container"></div>
+        </div>
+
+        <div class="column" data-status="blocked">
+            <h2>Blocked</h2>
+            <div class="task-container"></div>
+        </div>
+
+        <div class="column" data-status="done">
+            <h2>Done</h2>
+            <div class="task-container"></div>
+        </div>
+    </div>
+
+    <!-- Modal para Backlog -->
+    <div id="backlogModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBacklogModal()">&times;</span>
+            <h2>Agregar tarea a Backlog</h2>
+            <form id="taskForm">
+                <label for="title">Título:</label>
+                <input type="text" name="title" id="title"><br><br>
+
+                <label for="description">Descripción:</label>
+                <textarea name="description" id="description"></textarea><br><br>
+
+                <label for="assigned">Asignado:</label>
+                <select name="assigned" id="assigned">
+                    <option value="person1">Persona 1</option>
+                    <option value="person2">Persona 2</option>
+                    <option value="person3">Persona 3</option>
+                </select><br><br>
+
+                <label for="priority">Prioridad:</label>
+                <select name="priority" id="priority">
+                    <option value="low">Baja</option>
+                    <option value="medium">Media</option>
+                    <option value="high">Alta</option>
+                </select><br><br>
+
+                <label for="status">Estado:</label>
+                <select name="status" id="status">
+                    <option value="backlog">Backlog</option>
+                    <option value="todo">To do</option>
+                    <option value="inprogress">In Progress</option>
+                    <option value="blocked">Blocked</option>
+                    <option value="done">Done</option>
+                </select><br><br>
+
+                <label for="deadline">Fecha límite:</label>
+                <input type="date" name="deadline" id="deadline"><br><br>
+
+                <!-- Botón para agregar tarea -->
+                <button type="button" onclick="addTask()">Agregar</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

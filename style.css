@@ -1,13 +1,75 @@
-@import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
-.columns{
-    display: flex;
-    background-color: aqua;
-    height: 500px;
-    justify-content: space-between;
+/* Estilo para la cabecera y el botón de Backlog */
+.header {
+    text-align: right;
+    padding: 10px;
+    background-color: #f1f1f1;
+  }
+  
+  .backlog-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Estilo para la ventana emergente */
+  .modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
     width: 100%;
-}
-
-.column{
-    width: 100px;
-}
-
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Estilo para las columnas */
+  .column {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .row {
+    clear: both;
+  }
+  
+  .task {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .task-container {
+    margin-top: 10px;
+  }
+  

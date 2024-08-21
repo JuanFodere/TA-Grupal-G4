@@ -1,1 +1,6 @@
-
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
+.column{
+    background-color: aqua;
+    height: 500px;
+    
+}
